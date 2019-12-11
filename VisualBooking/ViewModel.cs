@@ -17,7 +17,7 @@ namespace VisualBooking
         public string PhoneNr { get; set; }
         public string Name { get; set; }
         public int Patrons { get; set; }
-        public ObservableCollection<Table> Bookings2 { get; set; }
+        public ObservableCollection<Booking> Bookings2 { get; set; }
 
         public ICommand AddCommand { get; set; }
         public ICommand SaveCommand { get; set; }
@@ -30,7 +30,7 @@ namespace VisualBooking
 
         public void Add()
         {
-            Bookings.Add(new Booking(Date, StartTime, PhoneNr, Name, Patrons));
+            Bookings2.Add(new Booking(Date, StartTime, PhoneNr, Name, Patrons));
         }
 
         public void Save()
