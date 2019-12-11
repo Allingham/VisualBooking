@@ -43,7 +43,7 @@ namespace VisualBooking
             return true;
         }
 */
-        public void AddBooking(DateTime date, DateTime startTime, string phoneNr, int patrons, string name)
+        public void AddBooking(DateTime date, DateTime startTime, string phoneNr, string name, int patrons)
         {
             Bookings.Add(new Booking(date, startTime, phoneNr, name, patrons));
         }
