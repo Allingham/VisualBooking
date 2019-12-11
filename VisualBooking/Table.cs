@@ -21,7 +21,7 @@ namespace VisualBooking
             PosX = posX;
             MaxPatrons = maxPatrons;
         }
-
+/*
         public bool Available(DateTime date, DateTime selectedTime, DateTime selectedDate, int patrons)
         {
             foreach (Booking b in Bookings)
@@ -42,7 +42,7 @@ namespace VisualBooking
 
             return true;
         }
-
+*/
         public void AddBooking(DateTime date, DateTime startTime, string phoneNr, int patrons, string name)
         {
             Bookings.Add(new Booking(date, startTime, phoneNr, name, patrons));

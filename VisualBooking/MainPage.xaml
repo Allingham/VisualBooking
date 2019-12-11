@@ -111,7 +111,8 @@
             <controls:Expander IsExpanded="True" Header="Bekræft" HorizontalContentAlignment="Stretch">
 
             </controls:Expander>
-            
+            <TimePicker/>
+
         </StackPanel>
 
     </Grid>
