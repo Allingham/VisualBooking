@@ -28,6 +28,7 @@ namespace VisualBooking
         {
             AddCommand = new RelayCommand(Add);
             SaveCommand = new RelayCommand(Save);
+            Date = DateTime.Now;
         }
 
         public void Add()
