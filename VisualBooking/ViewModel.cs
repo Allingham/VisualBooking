@@ -30,7 +30,7 @@ namespace VisualBooking
 
         public void Add()
         {
-            Bookings2.Add(new Booking(Date, StartTime, PhoneNr, Name, Patrons));
+            Bookings.Add(new Booking(Date, StartTime, PhoneNr, Name, Patrons));
         }
 
         public void Save()
