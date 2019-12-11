@@ -24,7 +24,7 @@ namespace VisualBooking
 
         public ViewModel()
         {
-            AddCommand = new RelayCommand(Add());
+            AddCommand = new RelayCommand(Add);
             SaveCommand = new RelayCommand(Save);
         }
 
