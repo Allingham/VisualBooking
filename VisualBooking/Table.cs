@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation.Metadata;
 
-namespace Flammen
+namespace VisualBooking
 {
     class Table
     {

@@ -7,7 +7,7 @@ using Windows.Storage;
 using Windows.UI.Popups;
 using Newtonsoft.Json;
 
-namespace Flammen
+namespace VisualBooking
 {
     class PersistencyService
     {
