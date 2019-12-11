@@ -8,10 +8,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.DataContext>
+        <local:ViewModel />
+    </Page.DataContext>
     <Grid>
         <StackPanel Orientation="Vertical">
-            <controls:Expander IsExpanded="True" HorizontalContentAlignment="Stretch" Header="Person Oplysninger">
+            <controls:Expander IsExpanded="True" HorizontalContentAlignment="Stretch" Header="Kontaktoplysninger">
                 <StackPanel Orientation="Vertical">
                     <Grid Margin="2">
                         <Grid.ColumnDefinitions>
@@ -21,7 +23,7 @@
                         
                         <TextBlock Grid.Column="0" Text="Navn:" VerticalAlignment="Center"/>
                         
-                        <TextBox Text="Dit Navn" Grid.Column="1" Margin="10,0,0,0"/>
+                        <TextBox Text="{Binding Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="10,0,0,0"/>
                         
                     </Grid>
                     <Grid Margin="2">
@@ -39,7 +41,7 @@
                             <ComboBoxItem Content="+43"/>
                         </ComboBox>
                         
-                        <TextBox Text="Telefon" Grid.Column="2"/>
+                        <TextBox Text="{Binding PhoneNr, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2"/>
                         
                     </Grid>
                     <Grid>
@@ -63,7 +65,7 @@
                         
                         <TextBlock VerticalAlignment="Center" Text="Dato:"/>
 
-                        <CalendarDatePicker Grid.Column="1" Margin="2"/>
+                        <CalendarDatePicker Date="{Binding Date}" Grid.Column="1" Margin="2"/>
                         
                     </Grid>
                     
@@ -104,7 +106,7 @@
 
             </controls:Expander>
 
-            <controls:Expander IsExpanded="True" Header="Bord Plan" HorizontalContentAlignment="Stretch">
+            <controls:Expander IsExpanded="True" Header="Bordplan" HorizontalContentAlignment="Stretch">
                 
             </controls:Expander>
 
