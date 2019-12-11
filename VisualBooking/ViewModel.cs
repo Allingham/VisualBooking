@@ -17,7 +17,7 @@ namespace VisualBooking
         public string PhoneNr { get; set; }
         public string Name { get; set; }
         public int Patrons { get; set; }
-        public ObservableCollection<Booking> Bookings2 { get; set; }
+        public ObservableCollection<Table> Bookings2 { get; set; }
 
         public ICommand AddCommand { get; set; }
         public ICommand SaveCommand { get; set; }
@@ -28,9 +28,9 @@ namespace VisualBooking
             SaveCommand = new RelayCommand(Save);
         }
 
-        public void Add()
+        public void Add(int index)
         {
-            Bookings2.Add(new Booking(Date, StartTime, PhoneNr, Name, Patrons));
+            Bookings2[index].AddBooking(Date, StartTime, PhoneNr, Patrons, Name);
         }
 
         public void Save()
