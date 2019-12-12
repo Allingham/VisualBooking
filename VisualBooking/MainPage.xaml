@@ -114,12 +114,13 @@
                         <Image Source="Assets/Bordplan.png" Margin="4,0,1087,-40"/>
                     </Grid>
                     <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="SandyBrown"/>
-                        </StackPanel>
+                </StackPanel>
             </controls:Expander>
 
 
-            <controls:Expander IsExpanded="True" Header="Bekræft" HorizontalContentAlignment="Stretch" Background="PeachPuff"/>
-            <Button Margin="2" Content="Bekræft" Command="{Binding SaveCommand}"  HorizontalAlignment="Right" Background="SandyBrown"/>
+            <controls:Expander IsExpanded="True" Header="Bekræft" HorizontalContentAlignment="Stretch" Background="PeachPuff">
+            <Button Margin="2" Content="Bekræft" Command="{Binding SaveCommand}"  HorizontalAlignment="Right" Background="SandyBrown" Click="Button_Click"/>
+            </controls:Expander>
 
         </StackPanel>
 

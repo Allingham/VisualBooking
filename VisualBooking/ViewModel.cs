@@ -20,12 +20,17 @@ namespace VisualBooking
         public int Index { get; set; }
         
         public ObservableCollection<Table> Bookings2 { get; set; }
+        public ObservableCollection<Booking> Bookings1 { get; set; }
 
         public ICommand AddCommand { get; set; }
         public ICommand SaveCommand { get; set; }
 
         public ViewModel()
         {
+            Bookings1 = new ObservableCollection<Booking>();
+            {
+                new Booking(DateTime.Now, DateTime.Now, "232322323", "Nicklas", 4);
+            }
             AddCommand = new RelayCommand(Add);
             SaveCommand = new RelayCommand(Save);
             Date = DateTime.Now;
