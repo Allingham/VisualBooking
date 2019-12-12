@@ -119,6 +119,7 @@
 
 
             <controls:Expander IsExpanded="True" Header="Bekræft" HorizontalContentAlignment="Stretch" Background="PeachPuff"/>
+            <Button Margin="2" Content="Bekræft" Command="{Binding SaveCommand}"  HorizontalAlignment="Right" Background="SandyBrown"/>
 
         </StackPanel>
 
