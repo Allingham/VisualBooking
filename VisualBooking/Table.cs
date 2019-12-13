@@ -47,5 +47,10 @@ namespace VisualBooking
         {
             Bookings.Add(new Booking(date, phoneNr, name, patrons));
         }
+
+        public override string ToString()
+        {
+            return $"{nameof(Bookings)}: {Bookings}";
+        }
     }
 }
