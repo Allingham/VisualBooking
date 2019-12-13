@@ -20,16 +20,16 @@ namespace VisualBooking
             PosY = posY;
             PosX = posX;
             MaxPatrons = maxPatrons;
+            Bookings = new List<Booking>();
         }
-/*
-        public bool Available(DateTime date, DateTime selectedTime, DateTime selectedDate, int patrons)
+
+        public bool Available(DateTime date, int patrons)
         {
             foreach (Booking b in Bookings)
             {
                 if (patrons > MaxPatrons && patrons >= MaxPatrons * 0.60)
                 {
-                    if (selectedTime < b.StartTime - b.Length && selectedTime > b.StartTime + b.Length &&
-                        date == selectedDate)
+                    if (date < b.Date.AddHours(2) && date > b.Date.AddHours(-2))
                     {
                         return false;
                     }
@@ -42,10 +42,10 @@ namespace VisualBooking
 
             return true;
         }
-*/
-        public void AddBooking(DateTime date, DateTime startTime, string phoneNr, string name, int patrons)
+
+        public void AddBooking(DateTimeOffset date, string phoneNr, string name, int patrons)
         {
-            Bookings.Add(new Booking(date, startTime, phoneNr, name, patrons));
+            Bookings.Add(new Booking(date, phoneNr, name, patrons));
         }
     }
 }
