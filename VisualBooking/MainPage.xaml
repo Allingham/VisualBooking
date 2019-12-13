@@ -50,7 +50,7 @@
                     </Grid>
                     <Grid/>
 
-                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="SandyBrown">
+                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="SandyBrown" Click="Button_Click_1" RenderTransformOrigin="0.505,0.5">
                     </Button>
 
                 </StackPanel>

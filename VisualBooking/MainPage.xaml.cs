@@ -36,5 +36,9 @@ namespace VisualBooking
         {
             this.Frame.Navigate(typeof(Bookingliste), null);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
