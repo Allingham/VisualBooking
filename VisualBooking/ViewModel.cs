@@ -56,7 +56,7 @@ namespace VisualBooking
         {
             Bookings1 = new ObservableCollection<Booking>();
             {
-                new Booking(DateTime.Now, DateTime.Now, "232322323", "Nicklas", 4);
+                new Booking(DateTime.Now, "1265564", "232322323", 4);
             }
             AddCommand = new RelayCommand(Add);
             SaveCommand = new RelayCommand(Save);

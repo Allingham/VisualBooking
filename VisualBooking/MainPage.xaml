@@ -24,11 +24,11 @@
                             <ColumnDefinition Width="420*"/>
                             <ColumnDefinition Width="773*"/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <TextBlock Grid.Column="0" Text="Navn:" VerticalAlignment="Center"/>
-                        
+
                         <TextBox Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="10,0,0,0"/>
-                        
+
                     </Grid>
                     <Grid Margin="2">
                         <Grid.ColumnDefinitions>
@@ -38,15 +38,15 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0" Text="Telefon:" VerticalAlignment="Center"/>
-                        
+
                         <ComboBox Grid.Column="1" Margin="10,0,0,0" SelectedIndex="0"  SelectedItem="{Binding PhonePrefix, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                             <x:String>+45</x:String>
                             <x:String>+44</x:String>
                             <x:String>+43</x:String>
                         </ComboBox>
-                        
+
                         <TextBox Text="{Binding PhoneNr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2"/>
-                        
+
                     </Grid>
                     <Grid/>
 
@@ -68,7 +68,7 @@
                         <TextBlock VerticalAlignment="Center" Text="Dato:"/>
 
                         <CalendarDatePicker Date="{Binding Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="2"/>
-                        
+
                     </Grid>
 
                     <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="SandyBrown"/>
@@ -118,15 +118,23 @@
             </controls:Expander>
 
 
+            <controls:Expander IsExpanded="True" Header="Bekræft" HorizontalContentAlignment="Stretch" Background="PeachPuff">
+
+
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
                     <StackPanel Grid.Column="0">
                         <TextBlock Text="Navn:"/>
                         <TextBlock Text="Telefon:"/>
+                        <TextBlock Text="Dato:"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1">
@@ -135,10 +143,14 @@
                         <TextBlock Text="{Binding Date, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
 
                     </StackPanel>
+
+                    <Button Grid.Row="1" Margin="5" Content="Bekræft" Command="{Binding SaveCommand}"  HorizontalAlignment="Right" Background="SandyBrown" Click="Button_Click" Grid.Column="1" VerticalAlignment="Top"/>
+
+
                 </Grid>
 
-            <controls:Expander IsExpanded="True" Header="Bekræft" HorizontalContentAlignment="Stretch" Background="PeachPuff">
-            <Button Margin="2" Content="Bekræft" Command="{Binding SaveCommand}"  HorizontalAlignment="Right" Background="SandyBrown" Click="Button_Click"/>
+
+
             </controls:Expander>
 
         </StackPanel>
