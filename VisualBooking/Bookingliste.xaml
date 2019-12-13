@@ -32,7 +32,7 @@
                     HorizontalAlignment="Left"
                     Text="Bookings:" />
             </Viewbox>
-            <ListView  ItemsSource="{Binding Bookings1}" Height="543" Width="280" />
+            <ListView ItemsSource="{Binding Bookings1}"/>
         </StackPanel>
 
     </Grid>
