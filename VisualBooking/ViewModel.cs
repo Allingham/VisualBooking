@@ -43,6 +43,7 @@ namespace VisualBooking
             set { _name = value; OnPropertyChanged("Name");}
         }
 
+        public DateTimeOffset Time { get; set; }
         public int Patrons { get; set; }
         public int Index { get; set; }
         public DateTimeOffset SelectedDate { get; set; }
@@ -52,17 +53,21 @@ namespace VisualBooking
         public ICommand AddCommand { get; set; }
         public ICommand SaveCommand { get; set; }
 
+        public ICommand AddTime17 { get; set; }
+        public ICommand AddTime1730 { get; set; }
+
         public ViewModel()
         {
             Bookings1 = new ObservableCollection<Booking>();
             {
-                new Booking(DateTime.Now, DateTime.Now, "232322323", "Nicklas", 4);
+
             }
             AddCommand = new RelayCommand(Add);
             SaveCommand = new RelayCommand(Save);
             Date = DateTime.Today;
 
-            
+            AddTime17 = new RelayCommand(AddT17);
+            AddTime1730 = new RelayCommand(AddT1730);
         }
 
         public void Add()
@@ -74,6 +79,18 @@ namespace VisualBooking
         public void Save()
         {
             PersistencyService.SaveNotesAsJsonAsync(Bookings2);
+        }
+
+        public void AddT17()
+        {
+            //Time = DateTimeOffset.Date;
+            Time = Time.AddHours(17);
+        }
+
+        public void AddT1730() {
+            //Time = DateTimeOffset.Date;
+            Time = Time.AddHours(17);
+            Time = Time.AddMinutes(30);
         }
 
         #region PropertyChangeSupport
