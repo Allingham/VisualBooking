@@ -15,10 +15,10 @@ namespace VisualBooking
     class ViewModel : INotifyPropertyChanged
     {
         private DateTimeOffset _date;
+        private DateTimeOffset _selectedDate;
         private string _name;
         private string _phoneNr;
         private string _phonePrefix;
-        private DateTimeOffset _selectedDate;
 
         public DateTimeOffset Date
         {
@@ -54,7 +54,6 @@ namespace VisualBooking
         public int Index { get; set; }
 
         public ObservableCollection<Table> Bookings2 { get; set; }
-        public ObservableCollection<Booking> Bookings1 { get; set; }
 
         public ICommand AddCommand { get; set; }
         public ICommand SaveCommand { get; set; }
@@ -70,22 +69,19 @@ namespace VisualBooking
 
         public ViewModel()
         {
-            Bookings1 = new ObservableCollection<Booking>();
-            {
-
-            }
-            AddCommand = new RelayCommand(Add);
-            SaveCommand = new RelayCommand(Save);
             Date = DateTime.Today;
 
-            AddTime17 = new RelayCommand(AddS17);
-            AddTime1730 = new RelayCommand(AddS1730);
-            AddTime18 = new RelayCommand(AddS18);
-            AddTime1830 = new RelayCommand(AddS1830);
-            AddTime19 = new RelayCommand(AddS19);
-            AddTime1930 = new RelayCommand(AddS1930);
-            AddTime20 = new RelayCommand(AddS20);
-            AddTime2030 = new RelayCommand(AddS2030);
+            AddCommand = new RelayCommand(Add);
+            SaveCommand = new RelayCommand(Save);
+
+            AddTime17 = new RelayCommand(AddT17);
+            AddTime1730 = new RelayCommand(AddT1730);
+            AddTime18 = new RelayCommand(AddT18);
+            AddTime1830 = new RelayCommand(AddT1830);
+            AddTime19 = new RelayCommand(AddT19);
+            AddTime1930 = new RelayCommand(AddT1930);
+            AddTime20 = new RelayCommand(AddT20);
+            AddTime2030 = new RelayCommand(AddT2030);
         }
 
         public void Add()
@@ -99,54 +95,48 @@ namespace VisualBooking
             PersistencyService.SaveNotesAsJsonAsync(Bookings2);
         }
 
-        public void AddS17()
+        #region AddTimeMethods
+        public void AddT17()
         {
             SelectedDate = Date.Date;
             SelectedDate = SelectedDate.AddHours(17);
-            OnPropertyChanged("SelectedDate");
         }
 
-        public void AddS1730() {
+        public void AddT1730() {
             SelectedDate = Date.Date;
             SelectedDate = SelectedDate.AddHours(17).AddMinutes(30);
-            OnPropertyChanged("SelectedDate");
         }
 
-        public void AddS18() {
+        public void AddT18() {
             SelectedDate = Date.Date;
             SelectedDate = SelectedDate.AddHours(18);
-            OnPropertyChanged("SelectedDate");
         }
 
-        public void AddS1830() {
+        public void AddT1830() {
             SelectedDate = Date.Date;
             SelectedDate = SelectedDate.AddHours(18).AddMinutes(30);
-            OnPropertyChanged("SelectedDate");
         }
 
-        public void AddS19() {
+        public void AddT19() {
             SelectedDate = Date.Date;
             SelectedDate = SelectedDate.AddHours(19);
-            OnPropertyChanged("SelectedDate");
         }
 
-        public void AddS1930() {
+        public void AddT1930() {
             SelectedDate = Date.Date;
             SelectedDate = SelectedDate.AddHours(19).AddMinutes(30);
-            OnPropertyChanged("SelectedDate");
         }
 
-        public void AddS20() {
+        public void AddT20() {
             SelectedDate = Date.Date;
             SelectedDate = SelectedDate.AddHours(20);
-            OnPropertyChanged("SelectedDate");
         }
 
-        public void AddS2030() {
+        public void AddT2030() {
             SelectedDate = Date.Date;
             SelectedDate = SelectedDate.AddHours(20).AddMinutes(30);
-            OnPropertyChanged("SelectedDate");
         }
+        #endregion
 
         #region PropertyChangeSupport
         public event PropertyChangedEventHandler PropertyChanged;
