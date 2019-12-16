@@ -62,7 +62,7 @@
 
         <ListView 
                 ItemTemplate="{StaticResource TableTemplate}"
-                ItemsSource="{Binding Bookings2}"
+                ItemsSource="{Binding TableList}"
                 />
         </StackPanel>
     </Grid>

@@ -11,11 +11,11 @@ namespace VisualBooking
 {
     class PersistencyService
     {
-        private static string JsonFileName = "Notes.json";
+        private static string JsonFileName = "Tables.json";
 
-        public static async void SaveNotesAsJsonAsync(ObservableCollection<Table> notes)
+        public static async void SaveNotesAsJsonAsync(ObservableCollection<Table> tables)
         {
-            string notesJsonString = JsonConvert.SerializeObject(notes);
+            string notesJsonString = JsonConvert.SerializeObject(tables);
             SerializeNotesFileAsync(notesJsonString, JsonFileName);
         }
 

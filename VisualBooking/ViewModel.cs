@@ -53,7 +53,9 @@ namespace VisualBooking
         public int Patrons { get; set; }
         public int Index { get; set; }
 
-        public ObservableCollection<Table> Bookings2 { get; set; }
+        public ObservableCollection<Table> TableList { get; set; }
+
+        
 
         public ICommand AddCommand { get; set; }
         public ICommand SaveCommand { get; set; }
@@ -74,10 +76,12 @@ namespace VisualBooking
             AddCommand = new RelayCommand(Add);
             SaveCommand = new RelayCommand(Save);
 
-            Bookings2 = new ObservableCollection<Table>();
-            Bookings2.Add(new Table(1,2,5, "1"));
+            TableList = new ObservableCollection<Table>();
+            //TableList.Add(new Table(1,2,5, "1"));
             Index = 0;
             Patrons = 4;
+
+            GetTables();
 
             AddTime17 = new RelayCommand(AddT17);
             AddTime1730 = new RelayCommand(AddT1730);
@@ -91,13 +95,24 @@ namespace VisualBooking
 
         public void Add()
         {
-            PhoneNr = PhonePrefix + PhoneNr;
-            Bookings2[Index].AddBooking(SelectedDate, PhoneNr, Name, Patrons);
+            TableList[0].Bookings.Add(new Booking(SelectedDate, PhoneNr, Name, Patrons));
         }
 
         public void Save()
         {
-            PersistencyService.SaveNotesAsJsonAsync(Bookings2);
+            PersistencyService.SaveNotesAsJsonAsync(TableList);
+        }
+
+        public async void GetTables()
+        {
+            var tables = await PersistencyService.LoadNotesFromJsonAsync();
+            int max = 0;
+            foreach (var table in tables)
+            {
+                TableList.Add(table);
+                
+            }
+           
         }
 
         #region AddTimeMethods

@@ -20,9 +20,7 @@
                     <Grid Margin="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50"/>
-                            <ColumnDefinition Width="253*"/>
-                            <ColumnDefinition Width="420*"/>
-                            <ColumnDefinition Width="773*"/>
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0" Text="Navn:" VerticalAlignment="Center"/>
@@ -143,8 +141,8 @@
                         <TextBlock Text="{Binding SelectedDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
 
                     </StackPanel>
-
-                    <Button Grid.Row="1" Margin="5" Content="Bekræft" Command="{Binding AddCommand}"  HorizontalAlignment="Right" Background="#FFB0C4DE" Click="Button_Click" Grid.Column="1" VerticalAlignment="Top"/>
+                    <Button Grid.Row="1" Grid.Column="1" Margin="5" Content="Bekræft" Command="{Binding AddCommand}"  ></Button>
+                    <Button Grid.Row="1" Margin="5" Content="Se Bookings" Command="{Binding SaveCommand}"  HorizontalAlignment="Right" Background="#FFB0C4DE" Click="Button_Click" Grid.Column="1" VerticalAlignment="Top"/>
 
 
                 </Grid>
