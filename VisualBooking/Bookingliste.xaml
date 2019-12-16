@@ -10,31 +10,43 @@
     <Page.Resources>
         <DataTemplate x:Key="TableTemplate">
             <Grid>
-                <StackPanel>
+                <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock
-                            Margin="0,0,10,3"
-                            FontFamily="Rockwell"
-                            FontSize="20"
-                            FontWeight="Bold"
-                            Text="{Binding Name}" />
-                        <TextBlock
-                            FontFamily="Rockwell"
-                            FontSize="20"
-                            FontWeight="Bold"
-                            Text="{Binding Date}" />
+                        <TextBlock Margin="0,0,5,0" Text="Bord Nr:"/>
+                        <TextBlock Text="{Binding TableName}" />
                     </StackPanel>
-
-                    <TextBlock
-                        FontFamily="Segoe UI Historic"
-                        FontSize="20"
-                        Text="{Binding PhonePrefix}" />
-                    <TextBlock
-                        Margin="0,0,0,15"
-                        FontFamily="Segoe UI Historic"
-                        FontSize="20"
-                        Text="{Binding PhoneNr}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,5,0" Text="Max Gæster:"/>
+                        <TextBlock Text="{Binding MaxPatrons}" />
+                    </StackPanel>
+                    <ListView
+                        ItemsSource="{Binding Bookings}" 
+                        Width="476" Height="401"
+                        ItemTemplate="{StaticResource BookingTemplate}"
+                        />
                 </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="BookingTemplate">
+            <Grid>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,5,0" Text="Navn:"/>
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,5,0" Text="Telefon:"/>
+                        <TextBlock Text="{Binding PhoneNr}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,5,0" Text="Antal Gæster:"/>
+                        <TextBlock Text="{Binding Patrons}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,5,0" Text="Dato:"/>
+                        <TextBlock Text="{Binding Date}" />
+                    </StackPanel>
+                    </StackPanel>
             </Grid>
         </DataTemplate>
     </Page.Resources>
@@ -42,27 +54,16 @@
         <local:ViewModel />
     </Page.DataContext>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height ="2"/>
-            <RowDefinition Height ="2"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2"/>
-            <ColumnDefinition Width="2"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel
-            Grid.Row="1"
-            Margin="0,10,-486,-638" Grid.ColumnSpan="2">
-            <Viewbox
-                MaxHeight="100"
-                HorizontalAlignment="Left"
-                Stretch="Uniform" Height="93" Width="320">
-                <TextBlock
-                    Padding="10"
-                    HorizontalAlignment="Left"
-                    Text="Bookings:" />
-            </Viewbox>
-            <ListView ItemTemplate="{StaticResource TableTemplate}" ItemsSource="{Binding Bookings2}" Width="476" Height="401"/>
+        <StackPanel>
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontSize="30"
+                Text="Bookings:"/>
+
+        <ListView 
+                ItemTemplate="{StaticResource TableTemplate}"
+                ItemsSource="{Binding Bookings2}"
+                />
         </StackPanel>
     </Grid>
 </Page>

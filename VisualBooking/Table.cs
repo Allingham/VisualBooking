@@ -10,17 +10,20 @@ namespace VisualBooking
 {
     class Table
     {
-        public ObservableCollection<Booking> Bookings;
+        public ObservableCollection<Booking> Bookings { get; set; }
         public int PosY { get; set; }
         public int PosX { get; set; }
         public int MaxPatrons { get; set; }
+        public String TableName { get; set; }
 
-        public Table(int posY, int posX, int maxPatrons)
+        public Table(int posY, int posX, int maxPatrons, String tableName)
         {
             PosY = posY;
             PosX = posX;
             MaxPatrons = maxPatrons;
+            TableName = tableName;
             Bookings = new ObservableCollection<Booking>();
+            AddBooking(DateTimeOffset.Now, "12345678", "Lars", 2);
         }
 
         public bool Available(DateTime date, int patrons)

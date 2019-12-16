@@ -75,7 +75,7 @@ namespace VisualBooking
             SaveCommand = new RelayCommand(Save);
 
             Bookings2 = new ObservableCollection<Table>();
-            Bookings2.Add(new Table(1,2,5));
+            Bookings2.Add(new Table(1,2,5, "1"));
             Index = 0;
             Patrons = 4;
 
