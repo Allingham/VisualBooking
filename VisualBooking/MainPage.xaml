@@ -14,6 +14,7 @@
     </Page.DataContext>
 
     <Grid>
+        <ScrollViewer IsEnabled="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <StackPanel Orientation="Vertical" Margin="0,0,0,-658">
             <controls:Expander IsExpanded="True" HorizontalContentAlignment="Stretch" Header="Kontaktoplysninger" Background="#FFF5F5F5" FocusVisualSecondaryBrush="#993E2323" BorderBrush="Orange" >
                 <StackPanel Orientation="Vertical" >
@@ -141,7 +142,7 @@
                         <TextBlock Text="{Binding SelectedDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
 
                     </StackPanel>
-                    <Button Grid.Row="1" Grid.Column="1" Margin="5" Content="Bekræft" Command="{Binding AddCommand}"  ></Button>
+                    <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" Content="Bekræft" Command="{Binding AddCommand}"  ></Button>
                     <Button Grid.Row="1" Margin="5" Content="Se Bookings" Command="{Binding SaveCommand}"  HorizontalAlignment="Right" Background="#FFB0C4DE" Click="Button_Click" Grid.Column="1" VerticalAlignment="Top"/>
 
 
@@ -152,6 +153,6 @@
             </controls:Expander>
 
         </StackPanel>
-
+        </ScrollViewer>
     </Grid>
 </Page>
