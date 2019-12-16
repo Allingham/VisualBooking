@@ -88,16 +88,16 @@
 
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="2" Background="White">
                             <Button Command="{Binding AddTime17}" Content="17:00"/>
-                            <Button Content="18:00"/>
-                            <Button Content="19:00"/>
-                            <Button Content="20:00"/>
+                            <Button Command="{Binding AddTime18}" Content="18:00"/>
+                            <Button Command="{Binding AddTime19}" Content="19:00"/>
+                            <Button Command="{Binding AddTime20}" Content="20:00"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="2" Background="White">
                             <Button Command="{Binding AddTime1730}" Content="17:30"/>
-                            <Button Content="18:30"/>
-                            <Button Content="19:30"/>
-                            <Button Content="20:30"/>
+                            <Button Command="{Binding AddTime1830}" Content="18:30"/>
+                            <Button Command="{Binding AddTime1930}" Content="19:30"/>
+                            <Button Command="{Binding AddTime2030}" Content="20:30"/>
                         </StackPanel>
 
 
@@ -140,7 +140,7 @@
                     <StackPanel Grid.Column="1">
                         <TextBlock Text="{Binding Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                         <TextBlock Text="{Binding PhoneNr, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-                        <TextBlock Text="{Binding Date, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="TextBlock_SelectionChanged"></TextBlock>
+                        <TextBlock Text="{Binding SelectedDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
 
                     </StackPanel>
 
