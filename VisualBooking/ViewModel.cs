@@ -55,8 +55,6 @@ namespace VisualBooking
 
         public ObservableCollection<Table> TableList { get; set; }
 
-        
-
         public ICommand AddCommand { get; set; }
         public ICommand SaveCommand { get; set; }
 
@@ -81,7 +79,7 @@ namespace VisualBooking
             Index = 0;
             Patrons = 4;
 
-            GetTables();
+            //GetTables();
 
             AddTime17 = new RelayCommand(AddT17);
             AddTime1730 = new RelayCommand(AddT1730);

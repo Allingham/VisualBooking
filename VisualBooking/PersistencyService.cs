@@ -27,8 +27,6 @@ namespace VisualBooking
             return null;
         }
 
-
-
         private static async void SerializeNotesFileAsync(string notesJsonString, string fileName)
         {
             StorageFile localFile = await ApplicationData.Current.LocalFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
