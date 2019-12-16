@@ -74,6 +74,11 @@ namespace VisualBooking
             AddCommand = new RelayCommand(Add);
             SaveCommand = new RelayCommand(Save);
 
+            Bookings2 = new ObservableCollection<Table>();
+            Bookings2.Add(new Table(1,2,5));
+            Index = 0;
+            Patrons = 4;
+
             AddTime17 = new RelayCommand(AddT17);
             AddTime1730 = new RelayCommand(AddT1730);
             AddTime18 = new RelayCommand(AddT18);

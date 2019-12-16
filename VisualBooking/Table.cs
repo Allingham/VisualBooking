@@ -10,7 +10,7 @@ namespace VisualBooking
 {
     class Table
     {
-        public List<Booking> Bookings;
+        public ObservableCollection<Booking> Bookings;
         public int PosY { get; set; }
         public int PosX { get; set; }
         public int MaxPatrons { get; set; }
@@ -20,7 +20,7 @@ namespace VisualBooking
             PosY = posY;
             PosX = posX;
             MaxPatrons = maxPatrons;
-            Bookings = new List<Booking>();
+            Bookings = new ObservableCollection<Booking>();
         }
 
         public bool Available(DateTime date, int patrons)
@@ -50,7 +50,7 @@ namespace VisualBooking
 
         public override string ToString()
         {
-            return $"{nameof(Bookings)}: {Bookings}";
+            return $"Bookings: {Bookings}, PosY: {PosY}, PosX: {PosX}, MaxPatrons: {MaxPatrons}";
         }
     }
 }
