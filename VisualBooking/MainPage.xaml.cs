@@ -32,10 +32,6 @@ namespace VisualBooking
             this.Frame.Navigate(typeof(Bookingliste), null);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e) {
-
-        }
-
         private void Next1(object sender, RoutedEventArgs e)
         {
             this.Kontakt.IsExpanded = false;
@@ -56,7 +52,5 @@ namespace VisualBooking
             this.Bord.IsExpanded = false;
             this.Bekraeft.IsExpanded = true;
         }
-
-        
     }
 }

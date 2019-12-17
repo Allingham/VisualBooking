@@ -119,7 +119,7 @@
 
                 </controls:Expander>
 
-                <controls:Expander x:Name="Bord" IsExpanded="True" Header="Bordplan" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5" >
+                <controls:Expander x:Name="Bord" IsExpanded="False" Header="Bordplan" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5" >
                     <StackPanel Orientation="Vertical">
                         <Grid Margin="5" Width="350" Height="288">
 

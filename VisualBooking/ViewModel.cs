@@ -291,7 +291,5 @@ namespace VisualBooking
             }
         }
         #endregion
-
-
     }
 }
