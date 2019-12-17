@@ -123,11 +123,11 @@
                 <StackPanel Orientation="Vertical">
                     <Grid Margin="5">
                         <StackPanel Orientation="Horizontal">
-                        <Button Margin="5" Width="40" Command="{Binding Bord0}" Content="{Binding TableList[0].MaxPatrons}" Background="{Binding TableColours[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Button Margin="5" Width="60" Command="{Binding Bord1}" Content="{Binding TableList[1].MaxPatrons}" Background="{Binding TableColours[1], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Button Margin="5" Width="100" Command="{Binding Bord2}" Content="{Binding TableList[2].MaxPatrons}" Background="{Binding TableColours[2], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <Button Margin="5" Width="40" Command="{Binding Bord3}" Content="{Binding TableList[3].MaxPatrons}" Background="{Binding TableColours[3], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Button Margin="5" Command="{Binding Bord4}" Content="{Binding TableList[4].MaxPatrons}" Background="{Binding TableColours[4], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Margin="5" Width="40" Command="{Binding Bord0}" Content="{Binding TableList[0].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Margin="5" Width="60" Command="{Binding Bord1}" Content="{Binding TableList[1].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[1], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Margin="5" Width="100" Command="{Binding Bord2}" Content="{Binding TableList[2].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[2], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Margin="5" Width="40" Command="{Binding Bord3}" Content="{Binding TableList[3].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[3], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Margin="5" Command="{Binding Bord4}" Content="{Binding TableList[4].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[4], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <!--<Image Source="Assets/Bordplan.png"/>-->
                         </StackPanel>
                     </Grid>
