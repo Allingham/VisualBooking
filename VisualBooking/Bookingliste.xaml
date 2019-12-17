@@ -64,6 +64,7 @@
                 ItemTemplate="{StaticResource TableTemplate}"
                 ItemsSource="{Binding TableList}"
                 />
+                <Button Content="Tilbage" HorizontalAlignment="Center" Click="Button_Click"> </Button>
         </StackPanel>
     </Grid>
     </ScrollViewer>
