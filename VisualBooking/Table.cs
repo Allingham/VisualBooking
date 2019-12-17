@@ -27,23 +27,26 @@ namespace VisualBooking
             //AddBooking(DateTimeOffset.Now, "12345678", "Johannes", 2);
         }
 
-        public bool Available(DateTime date, int patrons)
+        public bool Available(DateTimeOffset date, int patrons)
         {
-            foreach (Booking b in Bookings)
+            if (Bookings != null)
             {
-                if (patrons > MaxPatrons && patrons >= MaxPatrons * 0.60)
+                foreach (Booking b in Bookings)
                 {
-                    if (date < b.Date.AddHours(2) && date > b.Date.AddHours(-2))
+                    if (patrons > MaxPatrons && patrons >= MaxPatrons * 0.60)
                     {
                         return false;
                     }
-
-                    return true;
+                    else if (b.Date < date.AddHours(2) && b.Date > date.AddHours(-2))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
                 }
-
-                return false;
             }
-
             return true;
         }
 

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel.Store.Preview.InstallControl;
+using Windows.UI.Popups;
 
 namespace VisualBooking
 {
@@ -19,6 +20,23 @@ namespace VisualBooking
         private string _name;
         private string _phoneNr;
         private string _phonePrefix;
+        private ObservableCollection<string> _tableColours;
+        private ObservableCollection<Table> _tableList;
+        private string _tableColour;
+        private int _patrons;
+        private int _index;
+
+        public string TableColour
+        {
+            get => _tableColour;
+            set { _tableColour = value; OnPropertyChanged("TableColour");}
+        }
+
+        public ObservableCollection<string> TableColours
+        {
+            get => _tableColours;
+            set { _tableColours = value; OnPropertyChanged("TableColours");}
+        }
 
         public DateTimeOffset Date
         {
@@ -50,10 +68,23 @@ namespace VisualBooking
             set { _name = value; OnPropertyChanged("Name");}
         }
 
-        public int Patrons { get; set; }
-        public int Index { get; set; }
+        public int Patrons
+        {
+            get => _patrons;
+            set { _patrons = value; OnPropertyChanged("Patrons");}
+        }
 
-        public ObservableCollection<Table> TableList { get; set; }
+        public int Index
+        {
+            get => _index;
+            set { _index = value; OnPropertyChanged("Index");}
+        }
+
+        public ObservableCollection<Table> TableList
+        {
+            get => _tableList;
+            set { _tableList = value; OnPropertyChanged("TableList");}
+        }
 
         public ICommand AddCommand { get; set; }
         public ICommand SaveCommand { get; set; }
@@ -67,6 +98,13 @@ namespace VisualBooking
         public ICommand AddTime20 { get; set; }
         public ICommand AddTime2030 { get; set; }
 
+        public ICommand SetTables { get; set; }
+        public ICommand Bord0 { get; set; }
+        public ICommand Bord1 { get; set; }
+        public ICommand Bord2 { get; set; }
+        public ICommand Bord3 { get; set; }
+        public ICommand Bord4 { get; set; }
+
         public ViewModel()
         {
             Date = DateTime.Today;
@@ -75,11 +113,14 @@ namespace VisualBooking
             SaveCommand = new RelayCommand(Save);
 
             TableList = new ObservableCollection<Table>();
+            TableColours = new ObservableCollection<string>();
+
             //TableList.Add(new Table(1,2,5, "1"));
-            Index = 0;
-            Patrons = 4;
+            //Index = 0;
+            //Patrons = 4;
 
             GetTables();
+            InitializeTableColours();
 
             AddTime17 = new RelayCommand(AddT17);
             AddTime1730 = new RelayCommand(AddT1730);
@@ -89,12 +130,30 @@ namespace VisualBooking
             AddTime1930 = new RelayCommand(AddT1930);
             AddTime20 = new RelayCommand(AddT20);
             AddTime2030 = new RelayCommand(AddT2030);
+            SetTables = new RelayCommand(SetTableColours);
+
+            Bord0 = new RelayCommand(SetBord0);
+            Bord1 = new RelayCommand(SetBord1);
+            Bord2 = new RelayCommand(SetBord2);
+            Bord3 = new RelayCommand(SetBord3);
+            Bord4 = new RelayCommand(SetBord4);
+
+            //TableColour = "#52BE80";
+            //TableColours[0] = "#E74C3C";
         }
 
-        public void Add()
+        public async void Add()
         {
-            TableList[0].Bookings.Add(new Booking(SelectedDate, PhoneNr, Name, Patrons));
-            Save();
+            if (TableList[Index].Available(SelectedDate, Patrons) == true)
+            {
+                TableList[Index].Bookings.Add(new Booking(SelectedDate, PhoneNr, Name, Patrons));
+                Save();
+            }
+            else
+            {
+                MessageDialog Advarsel = new MessageDialog("Du har valgt et bord der allerede er booket!", "Overbooking");
+                await Advarsel.ShowAsync();
+            }
         }
 
         public void Save()
@@ -116,14 +175,68 @@ namespace VisualBooking
             else
             {
                 TableList.Add(new Table(0,0,4,"1"));
-                TableList.Add(new Table(0,0,4,"2"));
-                TableList.Add(new Table(0,0,4,"3"));
+                TableList.Add(new Table(0,0,6,"2"));
+                TableList.Add(new Table(0,0,8,"3"));
                 TableList.Add(new Table(0,0,4,"4"));
-                TableList.Add(new Table(0,0,4,"5"));
+                TableList.Add(new Table(0,0,2,"5"));
             }
 
         }
 
+        public void SetTableColours()
+        {
+            bool available;
+            for (int i = 0; i < 5; i++)
+            {
+                available = TableList[i].Available(SelectedDate, Patrons);
+                if (available == false)
+                {
+                    TableColours[i] = "#E74C3C";
+                }
+                else
+                {
+                    TableColours[i] = "#52BE80";
+                }
+            }
+        }
+
+        public void InitializeTableColours()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                TableColours.Add("#52BE80");
+            }
+        }
+
+        #region TableMethods
+
+        public void SetBord0()
+        {
+            Index = 0;
+        }
+
+        public void SetBord1()
+        {
+            Index = 1;
+        }
+
+        public void SetBord2()
+        {
+            Index = 2;
+        }
+
+        public void SetBord3()
+        {
+            Index = 3;
+        }
+
+        public void SetBord4()
+        {
+            Index = 4;
+        }
+
+        #endregion
+        
         #region AddTimeMethods
         public void AddT17()
         {
@@ -178,5 +291,7 @@ namespace VisualBooking
             }
         }
         #endregion
+
+
     }
 }
