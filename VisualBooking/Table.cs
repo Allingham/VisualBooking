@@ -50,11 +50,6 @@ namespace VisualBooking
             return true;
         }
 
-        public void AddBooking(DateTimeOffset date, string phoneNr, string name, int patrons)
-        {
-            Bookings.Add(new Booking(date, phoneNr, name, patrons));
-        }
-
         public override string ToString()
         {
             return $"Bookings: {Bookings}, PosY: {PosY}, PosX: {PosX}, MaxPatrons: {MaxPatrons}";
