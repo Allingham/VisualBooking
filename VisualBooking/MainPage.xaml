@@ -123,12 +123,13 @@
                     <StackPanel Orientation="Vertical">
                         <Grid Margin="5" Width="350" Height="288">
 
-                            <Button Margin="61,240,0,0" Width="40" Command="{Binding Bord0}" Content="{Binding TableList[0].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                            <Button Margin="71,184,0,0" Width="60" Command="{Binding Bord1}" Content="{Binding TableList[1].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[1], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                            <Button Width="100" Command="{Binding Bord2}" Content="{Binding TableList[2].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[2], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="190,150,0,0" VerticalAlignment="Top"/>
-                            <Button Margin="190,229,0,0" Width="40" Command="{Binding Bord3}" Content="{Binding TableList[3].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[3], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                            <Button Margin="127,106,0,0" Command="{Binding Bord4}" Content="{Binding TableList[4].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[4], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
-                            <!--<Image Source="Assets/Bordplan.png"/>-->
+                            <Image Source="Assets/Bordplan.png"/>
+
+                            <Button Margin="111,164,0,0" Width="46" Command="{Binding Bord0}" Content="{Binding TableList[0].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+                            <Button Margin="81,113,0,0" Width="60" Command="{Binding Bord1}" Content="{Binding TableList[1].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[1], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+                            <Button Width="100" Command="{Binding Bord2}" Content="{Binding TableList[2].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[2], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="141,70,0,0" VerticalAlignment="Top"/>
+                            <Button Margin="175,202,0,0" Width="50" Command="{Binding Bord3}" Content="{Binding TableList[3].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[3], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+                            <Button Margin="81,70,0,0" Command="{Binding Bord4}" Content="{Binding TableList[4].MaxPatrons, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Background="{Binding TableColours[4], Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="44"/>
 
                         </Grid>
                         <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="#FFB0C4DE" Click="Next4"/>
