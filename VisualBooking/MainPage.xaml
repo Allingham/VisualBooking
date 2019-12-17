@@ -14,7 +14,8 @@
     </Page.DataContext>
 
     <Grid>
-        <StackPanel  Orientation="Vertical" Margin="0,0,0,-658">
+        <ScrollViewer>
+        <StackPanel  Orientation="Vertical" Margin="0,0,0,0">
             <controls:Expander x:Name="Kontakt" IsExpanded="True" HorizontalContentAlignment="Stretch" Header="Kontaktoplysninger" Background="#FFF5F5F5" FocusVisualSecondaryBrush="#993E2323" BorderBrush="Orange" >
                 <StackPanel Orientation="Vertical" >
                     <Grid Margin="2">
@@ -176,5 +177,7 @@
             </controls:Expander>
 
         </StackPanel>
+        </ScrollViewer>
     </Grid>
+
 </Page>
