@@ -79,7 +79,7 @@ namespace VisualBooking
             Index = 0;
             Patrons = 4;
 
-            //GetTables();
+            GetTables();
 
             AddTime17 = new RelayCommand(AddT17);
             AddTime1730 = new RelayCommand(AddT1730);
@@ -104,13 +104,26 @@ namespace VisualBooking
         public async void GetTables()
         {
             var tables = await PersistencyService.LoadNotesFromJsonAsync();
-            int max = 0;
-            foreach (var table in tables)
+            if (tables != null)
             {
-                TableList.Add(table);
-                
+                {
+
+                }
+                foreach (var table in tables)
+                {
+                    TableList.Add(table);
+
+                }
             }
-           
+            else
+            {
+                TableList.Add(new Table(0,0,4,"1"));
+                TableList.Add(new Table(0,0,4,"2"));
+                TableList.Add(new Table(0,0,4,"3"));
+                TableList.Add(new Table(0,0,4,"4"));
+                TableList.Add(new Table(0,0,4,"5"));
+            }
+
         }
 
         #region AddTimeMethods

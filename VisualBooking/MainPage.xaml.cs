@@ -35,5 +35,28 @@ namespace VisualBooking
         private void Button_Click_1(object sender, RoutedEventArgs e) {
 
         }
+
+        private void Next1(object sender, RoutedEventArgs e)
+        {
+            this.Kontakt.IsExpanded = false;
+            this.Dato.IsExpanded = true;
+        }
+        private void Next2(object sender, RoutedEventArgs e)
+        {
+            this.Dato.IsExpanded = false;
+            this.Tid.IsExpanded = true;
+        }
+        private void Next3(object sender, RoutedEventArgs e)
+        {
+            this.Tid.IsExpanded = false;
+            this.Bord.IsExpanded = true;
+        }
+        private void Next4(object sender, RoutedEventArgs e)
+        {
+            this.Bord.IsExpanded = false;
+            this.Bekraeft.IsExpanded = true;
+        }
+
+        
     }
 }

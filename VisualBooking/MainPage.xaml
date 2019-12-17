@@ -14,9 +14,8 @@
     </Page.DataContext>
 
     <Grid>
-        <ScrollViewer IsEnabled="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <StackPanel Orientation="Vertical" Margin="0,0,0,-658">
-            <controls:Expander IsExpanded="True" HorizontalContentAlignment="Stretch" Header="Kontaktoplysninger" Background="#FFF5F5F5" FocusVisualSecondaryBrush="#993E2323" BorderBrush="Orange" >
+        <StackPanel  Orientation="Vertical" Margin="0,0,0,-658">
+            <controls:Expander x:Name="Kontakt" IsExpanded="True" HorizontalContentAlignment="Stretch" Header="Kontaktoplysninger" Background="#FFF5F5F5" FocusVisualSecondaryBrush="#993E2323" BorderBrush="Orange" >
                 <StackPanel Orientation="Vertical" >
                     <Grid Margin="2">
                         <Grid.ColumnDefinitions>
@@ -49,13 +48,13 @@
                     </Grid>
                     <Grid/>
 
-                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="#FFB0C4DE" Click="Button_Click_1" RenderTransformOrigin="0.505,0.5">
+                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="#FFB0C4DE" Click="Next1" RenderTransformOrigin="0.505,0.5">
                     </Button>
 
                 </StackPanel>
             </controls:Expander>
 
-            <controls:Expander IsExpanded="False" Header="Dato" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5">
+            <controls:Expander x:Name="Dato" IsExpanded="False" Header="Dato" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5">
                 <StackPanel Orientation="Vertical">
 
                     <Grid Margin="2">
@@ -70,13 +69,13 @@
 
                     </Grid>
 
-                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="#FFB0C4DE"/>
+                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="#FFB0C4DE" Click="Next2"/>
 
                 </StackPanel>
 
             </controls:Expander>
 
-            <controls:Expander IsExpanded="False" Header="Tidspunkt" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5">
+            <controls:Expander x:Name="Tid" IsExpanded="False" Header="Tidspunkt" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5">
 
                 <StackPanel Orientation="Vertical">
                     <Grid Margin="5" HorizontalAlignment="Left">
@@ -102,22 +101,22 @@
 
 
                     </Grid>
-                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="#FFB0C4DE"/>
+                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="#FFB0C4DE" Click="Next3"/>
                 </StackPanel>
 
             </controls:Expander>
 
-            <controls:Expander IsExpanded="False" Header="Bordplan" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5" >
+            <controls:Expander x:Name="Bord" IsExpanded="False" Header="Bordplan" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5" >
                 <StackPanel Orientation="Vertical">
                     <Grid Margin="5" HorizontalAlignment="Left">
                         <Image Source="Assets/Bordplan.png" Margin="4,0,1087,-40"/>
                     </Grid>
-                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="#FFB0C4DE"/>
+                    <Button Margin="2" Content="Næste" HorizontalAlignment="Right" Background="#FFB0C4DE" Click="Next4"/>
                 </StackPanel>
             </controls:Expander>
 
 
-            <controls:Expander IsExpanded="False" Header="Bekræft" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5">
+            <controls:Expander x:Name="Bekraeft" IsExpanded="False" Header="Bekræft" HorizontalContentAlignment="Stretch" Background="#FFF5F5F5">
 
 
                 <Grid>
@@ -154,6 +153,5 @@
             </controls:Expander>
 
         </StackPanel>
-        </ScrollViewer>
     </Grid>
 </Page>
