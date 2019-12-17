@@ -94,6 +94,7 @@ namespace VisualBooking
         public void Add()
         {
             TableList[0].Bookings.Add(new Booking(SelectedDate, PhoneNr, Name, Patrons));
+            Save();
         }
 
         public void Save()
@@ -106,9 +107,6 @@ namespace VisualBooking
             var tables = await PersistencyService.LoadNotesFromJsonAsync();
             if (tables != null)
             {
-                {
-
-                }
                 foreach (var table in tables)
                 {
                     TableList.Add(table);

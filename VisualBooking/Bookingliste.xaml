@@ -21,7 +21,6 @@
                     </StackPanel>
                     <ListView
                         ItemsSource="{Binding Bookings}" 
-                        Width="476" Height="401"
                         ItemTemplate="{StaticResource BookingTemplate}"
                         />
                 </StackPanel>
@@ -53,6 +52,7 @@
     <Page.DataContext>
         <local:ViewModel />
     </Page.DataContext>
+    <ScrollViewer>
     <Grid>
         <StackPanel>
             <TextBlock
@@ -66,4 +66,5 @@
                 />
         </StackPanel>
     </Grid>
+    </ScrollViewer>
 </Page>

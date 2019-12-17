@@ -143,7 +143,7 @@
 
                         <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal">
                             <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" Content="Bekræft" Command="{Binding AddCommand}" Background="#FFB0C4DE" ></Button>
-                    <Button Grid.Row="1" Margin="5" Content="Se bookings" Command="{Binding SaveCommand}" Background="#FFB0C4DE" Click="Button_Click" Grid.Column="1"/>
+                    <Button Grid.Row="1" Margin="5" Content="Se bookings" Background="#FFB0C4DE" Click="Button_Click" Grid.Column="1"/>
                     </StackPanel>
 
                     </Grid>

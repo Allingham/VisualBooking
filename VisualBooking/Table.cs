@@ -23,8 +23,8 @@ namespace VisualBooking
             MaxPatrons = maxPatrons;
             TableName = tableName;
             Bookings = new ObservableCollection<Booking>();
-            AddBooking(DateTimeOffset.Now, "12345678", "Lars", 2);
-            AddBooking(DateTimeOffset.Now, "12345678", "Johannes", 2);
+            //AddBooking(DateTimeOffset.Now, "12345678", "Lars", 2);
+            //AddBooking(DateTimeOffset.Now, "12345678", "Johannes", 2);
         }
 
         public bool Available(DateTime date, int patrons)
